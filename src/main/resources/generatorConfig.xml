@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <classPathEntry location="/Users/someone/.m2/repository/org/postgresql/postgresql/42.2.5/postgresql-42.2.5.jar"/>
+    <context id="context1" >
+        <jdbcConnection driverClass="org.postgresql.Driver" connectionURL="jdbc:postgresql://localhost:5432/test_db" userId="root" password="password" />
+        <javaModelGenerator targetPackage="com.example.exercise.generated" targetProject="src/main/java/" />
+        <sqlMapGenerator targetPackage="com.example.exercise.generated" targetProject="src/main/resources/" />
+        <javaClientGenerator targetPackage="com.example.exercise.generated" targetProject="src/main/java/" type="XMLMAPPER" />
+        <table schema="public" tableName="%" />
+    </context>
+</generatorConfiguration>
