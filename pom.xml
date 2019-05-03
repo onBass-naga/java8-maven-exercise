@@ -11,6 +11,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.8</java.version>
+        <version.postgres.jdbc>42.2.5</version.postgres.jdbc>
+        <version.mybatis.plugin>1.1.2</version.mybatis.plugin>
     </properties>
 
     <build>
@@ -47,6 +49,23 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.mybatis.maven</groupId>
+                <artifactId>migrations-maven-plugin</artifactId>
+                <version>${version.mybatis.plugin}</version>
+                <configuration>
+                    <repository>migration</repository>
+                    <output>dist/migration-name.sql</output>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.postgresql</groupId>
+                        <artifactId>postgresql</artifactId>
+                        <version>${version.postgres.jdbc}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
