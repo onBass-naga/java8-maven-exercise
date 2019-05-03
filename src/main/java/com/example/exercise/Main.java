@@ -1,7 +1,11 @@
 package com.example.exercise;
 
+import com.example.exercise.utilities.Calculator;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world");
+
+        Calculator calculator = new Calculator();
+        System.out.println(calculator.add(1, 4));
     }
 }
